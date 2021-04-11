@@ -182,62 +182,16 @@ body{
     background-color: #f8f9fe;
 }
 .how_layout{
-    background-color: #fff;
-    padding: 65px 30px 40px 30px;
+    /* background-color: #fff; */
+    /* padding: 65px 30px 40px 30px; */
     border-radius: 4px;
     transition: all .3s;
     margin-bottom: 30px;
     position: relative;
     z-index: 1;
-    border: 1px solid rgba(103,114,134,0.2);
+    /* border: 1px solid rgba(103,114,134,0.2); */
 }
-.how_layout::before{
-    position: absolute;
-    content: '';
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    border-radius: 4px;
-    background-color: rgba(30,22,107,0.8);
-    transition: all .4s;
-    opacity: 0;
-    visibility: hidden;
-}
-.how_layout::after{
-    background-image: url(./images/blog-img2.jpg);
-    background-position: center;
-    background-color: transparent;
-    z-index: -1;
-}
-.how_layout::after{
-    position: absolute;
-    content: '';
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    border-radius: 4px;
-    background-color: rgba(30,22,107,0.8);
-    transition: all .4s;
-    opacity: 1;
-    visibility: hidden;
-}
-.how_layout:hover {
-    border: 1px solid rgba(103,114,134,0.1);
-}
-.how_layout:hover::after, .how_layout:hover::before{
-    opacity:1;
-    visibility:visible;
-    top:0;
-    bottom:auto;
-    height:100%
-}
-.how_layout:hover .how_title, .how_layout:hover .how_desc, .how_layout:hover .fact_icon {
-    color: #fff;
-    z-index: 1;
-    position: relative;
-}
+
 .how_title{
     font-size: 22px;
     text-transform: capitalize;
@@ -248,7 +202,7 @@ body{
 }
 .how_desc{
     color: #677286;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 28px;
     font-weight: 400;
     text-align: center;
