@@ -37,6 +37,9 @@
     <!-- owl carousel -->
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
 
+    <!-- izitoast -->
+    <link rel="stylesheet" href="iziToast-master/dist/css/iziToast.min.css">
+
   </head>
   <body>
     <!-- preloader -->
@@ -61,14 +64,7 @@
             <div class="col d-flex align-items-center justify-content-between">
               <a class="navbar-brand logo text-white h2 mb-0" href="#">
             
-                <img
-                  class="d-inline-block align-top"
-                  alt=""
-                  loading="lazy"
-                  src="images/hackangels.jpeg"
-                  width="100"
-                  height="50"
-                />
+                HAL
               </a>
               <nav class="navbar navbar-expand-lg ml-auto">
                 <button
@@ -391,7 +387,7 @@ transparency intergrity and resoucefulness and will not abscound with your inves
             href="#contact"
               class="btn btn-trade mt-3"
             >
-              Get your money back
+            Contact a Specialist
             </a>
           </div>
         </div>
@@ -437,10 +433,10 @@ transparency intergrity and resoucefulness and will not abscound with your inves
                 <div class="card p-5 p-lg-8 bg-primary-soft border-0">
                   <div class="card-body p-0 mt-5">
                     <p class="text-light">
-                      I lost a lot of money through a binary option scam. I first tried to get my money back through charge back with the banks, but the fraudsters had all the answers to the banks and my disputes were closed. I then contacted a trade lawyer, who took the company to court and won my case and I was awarded a massive amount in damages, but the lawyer also turned out to be a fraudster and I lost more money. I had lost hope and prepared myself to write off my losses, but decided to try hackangelslab as a last resort, because I simply had no more funds to pay lawyer retainer fees.
+                      hackangelslab.com provided me with excellent service, to receive most of my funds back. I had made a large investment with a binary option company and over a period of time had tripled this investment. It turned out to all be fictitious and then had the horrible realization that I had probably lost everything. I knew I had limited time to maybe recover a little of my original investment. Megan was especially helpful. Through her guidance over a difficult 4 months I was able to recover 95%. It required solid teamwork and persistence. The results show their superb knowledge base and expertise in this very small field. I can highly recommend this company
                     </p>
                     <div>
-                      <h5 class="text-primary d-inline mb-0">Brian from Michigan</h5>
+                      <h5 class="text-primary d-inline mb-0">Jake from CALIFORNIA</h5>
                     </div>
                   </div>
                 </div>
@@ -449,35 +445,7 @@ transparency intergrity and resoucefulness and will not abscound with your inves
                 <div class="card p-5 p-lg-8 bg-primary-soft border-0">
                   <div class="card-body p-0 mt-5">
                     <p class="text-light">
-                      January 2021 was for me the beginning of a nightmare that ended recently thanks to hackangelslab.com and Morton. I lost 100,000 USD with a crypto scam whom I taught were professional investors. With the help of Morton, I was able to recover some money so that I can now put that horrible story behind. Megan was very compassionate and understanding. She was always available; it was easy to get in touch with her. I cannot imagine what would have been my life within the last six months without her support. I urge everyone; don’t ever get involved with crypto companies that has not been validated by hacksangelslab.com. 
-                    </p>
-                    <div>
-                      <h5 class="text-primary d-inline mb-0">Merlin from florida</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="card p-5 p-lg-8 bg-primary-soft border-0">
-                  <!-- images -->
-
-                  <div class="card-body p-0 mt-5">
-                    <p class="text-light">
-                      hackangelslab.com provided me with excellent service, to receive most of my funds back. I had made a large investment with a binary option company and over a period of time had tripled this investment. It turned out to all be fictitious and then had the horrible realization that I had probably lost everything. I knew I had limited time to maybe recover a little of my original investment. Megan was especially helpful. Through her guidance over a difficult 4 months I was able to recover 95%. It required solid teamwork and persistence. 
-                    </p>
-                    <div>
-                      <h5 class="text-primary d-inline mb-0">Jake from california</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="card p-5 p-lg-8 bg-primary-soft border-0">
-                  <!-- images -->
-
-                  <div class="card-body p-0 mt-5">
-                    <p class="text-light">
-                      Morton was really great especially because she is an Aussie it made me a little more comfortable at the start. As she began to dissect and work through evidence it felt good to have someone on my side. he is such a lovely and easy to person to talk with such a professional determined approach to getting solving my infedelity issue. If he has done it over and over again then morton at hackangelslab.com will do the upmost best to track your infidelity partner.
+                      Morton was really great especially because she is an Aussie it made me a little more comfortable at the start. As she began to dissect and work through evidence it felt good to have someone on my side. he is such a lovely and easy to person to talk with such a professional determined approach to getting solving my infedelity issue. If he has done it over and over again then morton at hackangelslab.com will do the upmost best to track your infidelity partner
                     </p>
                     <div>
                       <h5 class="text-primary d-inline mb-0">Megan from TEXAS</h5>
@@ -795,6 +763,8 @@ You may be able to make money by yourself, but it is my experience that if you t
     <script src="assets/js/theme-script.js"></script>
     <script src="assets/js/owl.carousel.min.js"></script>
     <script src="https://kit.fontawesome.com/d54c227c34.js"></script>
+    <script src="lib/viewdata.js"></script>
+    <script src="iziToast-master/dist/js/iziToast.min.js"></script>
     <script>
         $('.paid').countTo({
             formatter: function (value, options) {
@@ -817,7 +787,61 @@ You may be able to make money by yourself, but it is my experience that if you t
               return '#' + value;
             }
         });
-    
+    </script>
+    <script>
+        $(document).ready(function(){
+          
+        
+       $("form").submit(function(event) { 
+           event.preventDefault();
+
+           var view_data = new ViewData(); 
+           var name = $('#name').val();
+           var email = $('#email').val();
+           var message = $('#message').val();
+
+           // endpoint to send user's request for verification
+           var verify = "contact";
+           var verifyurl = view_data.ControllerRouteURL + verify;
+
+           var data = {
+               email: email,
+               name: name,
+               message: message,
+               }
+
+           $.ajax({
+               type: 'POST',
+               data: JSON.stringify(data),
+               url: verifyurl,
+               contentType: "application/json; charset=utf-8",
+               dataType: 'json',
+               beforeSend: function(jqXHR, settings) {
+                    $('#verify').addClass("mdi mdi-loading mdi-spin");
+                    $('#verify').attr("disabled", true)
+               },
+               success: function(data) {
+                   $('#verify').removeClass("mdi mdi-loading mdi-spin"); 
+                   $('#verify').attr("disabled", false)
+                   iziToast.success({
+                       message: 'Message successfully sent.',
+                       progressBar: false,
+                       position: 'topRight'
+                    });
+
+                   $('#name').val('');
+                   $('#email').val('');
+                   $('#message').val('');
+                   
+               },
+               complete: function(jqXHR) {
+                   $('#verify').removeClass("mdi mdi-loading mdi-spin");
+                   $('#verify').attr("disabled", false)
+               }
+             })           
+       })
+     })
+
     </script>
   </body>
 </html>
