@@ -803,6 +803,7 @@ You may be able to make money by yourself, but it is my experience that if you t
            // endpoint to send user's request for verification
            var verify = "contact";
            var verifyurl = view_data.ControllerRouteURL + verify;
+           var token = view_data.APPKEY
 
            var data = {
                email: email,
@@ -817,6 +818,7 @@ You may be able to make money by yourself, but it is my experience that if you t
                contentType: "application/json; charset=utf-8",
                dataType: 'json',
                beforeSend: function(jqXHR, settings) {
+                     jqXHR.setRequestHeader('Authorization', token);
                     $('#verify').addClass("mdi mdi-loading mdi-spin");
                     $('#verify').attr("disabled", true)
                },
